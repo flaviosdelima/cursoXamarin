@@ -1,10 +1,8 @@
 ﻿using System;
 using Android.App;
-using Android.Content;
-using Android.Runtime;
-using Android.Views;
 using Android.Widget;
 using Android.OS;
+using ClassLibraryCurso;
 
 namespace CursoAndroid
 {
@@ -16,6 +14,7 @@ namespace CursoAndroid
         TextView textTitle;
         ImageView imageCourse;
         TextView textDescription;
+        CourseManager courseManager;
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -31,21 +30,34 @@ namespace CursoAndroid
 
             buttonPrev.Click += ButtonPrev_Click;
             buttonNext.Click += ButtonNext_Click;
-            
+            courseManager = new CourseManager();
+            courseManager.moveFirst();
+            updateUI();
         }
 
         private void ButtonPrev_Click(object sender, EventArgs e)
         {
-            textTitle.Text = "Clicou no anterior";
-            textDescription.Text = "Clicou no anterior isto é uma descrição";
-            imageCourse.SetImageResource(Resource.Drawable.ps_top_card_01);
+            courseManager.movePrev();
+            updateUI();
         }
 
         private void ButtonNext_Click(object sender, EventArgs e)
         {
-            textTitle.Text = "Clicou no proximo";
-            textDescription.Text = "Clicou no proximo isto é uma descrição";
-            imageCourse.SetImageResource(Resource.Drawable.ps_top_card_02);
+            courseManager.moveNext();
+            updateUI();
+
+        }
+
+        private void updateUI()
+        {
+            textTitle.Text = courseManager.Current.Title;
+            textDescription.Text = courseManager.Current.Description;
+            imageCourse.SetImageResource(ResourceHelper.TranslateDrawableWithReflection(courseManager.Current.Image));
+
+            //imageCourse.SetImageResource(ResourceHelper.TranslateDrawable(courseManager.Current.Image));
+
+            buttonNext.Enabled = courseManager.canMoveNext;
+            buttonPrev.Enabled = courseManager.canMovePrev;
         }
     }
 }

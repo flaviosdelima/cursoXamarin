@@ -1,0 +1,5 @@
+C:\Users\Flavio\documents\visual studio 2015\Projects\CursoXamarin\ClassLibraryCurso\bin\Debug\ClassLibraryCurso.dll
+C:\Users\Flavio\documents\visual studio 2015\Projects\CursoXamarin\ClassLibraryCurso\bin\Debug\ClassLibraryCurso.pdb
+C:\Users\Flavio\documents\visual studio 2015\Projects\CursoXamarin\ClassLibraryCurso\obj\Debug\ClassLibraryCurso.csprojResolveAssemblyReference.cache
+C:\Users\Flavio\documents\visual studio 2015\Projects\CursoXamarin\ClassLibraryCurso\obj\Debug\ClassLibraryCurso.dll
+C:\Users\Flavio\documents\visual studio 2015\Projects\CursoXamarin\ClassLibraryCurso\obj\Debug\ClassLibraryCurso.pdb
